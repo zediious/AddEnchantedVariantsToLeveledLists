@@ -6,13 +6,17 @@ This is designed as a "sister script" to the above linked xEdit script, as it re
 
 This script is primarily designed to insert these weapons into the leveled lists prefixed with `SublistEnch`. The script allows you to choose the fuzzy search parameter, but you will almost always want to insert `SublistEnch`
 
-1) Select any amount of weapon or armor records, and run the script. Other record types are ignored, so you can select a plugin or an ARMO/WEAP GRUP instead.
+1) Generate enchanted variants of the weapons and armor you wish to put into leveled lists [with this script](https://www.nexusmods.com/skyrimspecialedition/mods/25395). If you want to generate enchanted variants from mods that adds enchantments (Summermyst and Wintermyst are supported already), you can add a plugin name (i.e `Thaumaturgy.esp`) to line `2282` in the `ALLA_AutomatedLeveledListAdditions.pas` script file. Below is this line with Thaumaturgy added.
 
-2) Enter a fuzzy search parameter for leveled lists (i.e `SublistEnch`, `LItemEnch`)
+      ```slTemp.CommaText := 'Skyrim.esm, Dawnguard.esm, Dragonborn.esm, HolyEnchants.esp, LostEnchantments.esp, "More Interesting Loot for Skyrim.esp", "Summermyst - Enchantments of Skyrim.esp", "Wintermyst - Enchantments of Skyrim.esp", "Thaumaturgy.esp"';```
 
-3) The script will then iterate over leveled lists in all the vanilla game plugins, Thaumaturgy, and Serenity (if they exist!) as well as any added plugins, and find any with the fuzzy search parameter. These are placed in a list. Then, for each selected equipment record, we check all those pre-determined LVLIs, and add it to relevent LVLIs. It decides which list to add to based on the WeapType/ArmorX and WeapMaterial/ArmorMaterial keywords that are attached to the equipment, along with the enchantment effect it has.
+3) Select any amount of weapon or armor records from the plugin generated above, and run the script. Other record types are ignored, so you can select a plugin or an ARMO/WEAP GRUP instead.
 
-4) Determine the correct level to add the weapon at based on weapon tiers from WACCF, and pre-existing leveled list entries. Armor pieces are always added at Level 1 per Bethesda's schema for Armor SublistEnch LVLIs.
+4) Enter a fuzzy search parameter for leveled lists (i.e `SublistEnch`, `LItemEnch`)
+
+5) The script will then iterate over leveled lists in all the vanilla game plugins, Thaumaturgy, and Serenity (if they exist!) as well as any added plugins, and find any with the fuzzy search parameter. These are placed in a list. Then, for each selected equipment record, we check all those pre-determined LVLIs, and add it to relevent LVLIs. It decides which list to add to based on the WeapType/ArmorX and WeapMaterial/ArmorMaterial keywords that are attached to the equipment, along with the enchantment effect it has.
+
+6) Determine the correct level to add the weapon at based on weapon tiers from WACCF, and pre-existing leveled list entries. Armor pieces are always added at Level 1 per Bethesda's schema for Armor SublistEnch LVLIs.
 
 ## Weapon Keywords
 
