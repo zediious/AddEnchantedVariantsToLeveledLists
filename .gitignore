@@ -2,3 +2,6 @@
 /__recovery
 __history
 __recovery
+xEditAPI.pas
+addEnchantedArmorVariantsToLeveledLists.pas
+addEnchantedWeaponVariantsToLeveledLists.pas
