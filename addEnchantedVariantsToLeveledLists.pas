@@ -337,7 +337,8 @@ begin
       if Pos(UpperCase(enchantment_string), UpperCase(iteratingLeveledListEI)) > 0 then begin
 
         // Check that found LVLI EditorID contains the derived tier
-        if Pos(UpperCase(tier), UpperCase(iteratingLeveledListEI)) > 0 then begin
+        // This is bypassed if the weapon type is a Crossbow
+        if (Pos(UpperCase(tier), UpperCase(iteratingLeveledListEI)) > 0) or SameText('Crossbow', weapon_type) then begin
 
           // If the current LVLI is a "Greatsword" list, and the current
           // weapon type is a "Sword", go to the next list.
