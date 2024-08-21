@@ -262,6 +262,10 @@ begin
         tier := 'Imperial'
     end;
 
+    // Convert Silver tier weapons to Steel
+    if SameText('Silver', tier) then
+      tier := 'Steel';
+
     // Convert new weapon types to the list they would be placed in
     if SameText('Pike', weapon_type) then
       weapon_type := 'Battleaxe';
