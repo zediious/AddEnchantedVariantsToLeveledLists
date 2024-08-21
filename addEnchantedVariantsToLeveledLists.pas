@@ -812,7 +812,7 @@ begin
   end;
 
   if not found then
-    AddMessage('No matching leveled list found for:' + EditorID(weaponRecord));
+    AddMessage('No matching leveled list found for:' + EditorID(e) + ' / ' + DisplayName(e));
 
   Result := 0;
 end;
