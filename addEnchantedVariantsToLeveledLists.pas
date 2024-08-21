@@ -266,6 +266,13 @@ begin
     if SameText('Silver', tier) then
       tier := 'Steel';
 
+    // Check if the weapon is a Crossbow, and assign it to a Crossbow
+    // weapon type rather than Bow
+    if SameText('Bow', weapon_type) then begin
+      if Pos(Uppercase('Crossbow'), Uppercase(DisplayName(weaponRecord))) > 0 then
+        weapon_type := 'Crossbow'
+    end;
+
     // Convert new weapon types to the list they would be placed in
     if SameText('Pike', weapon_type) then
       weapon_type := 'Battleaxe';
