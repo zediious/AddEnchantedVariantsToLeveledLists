@@ -710,6 +710,12 @@ begin
         tier := 'Leather';
     end;
 
+    // Convert Leather to Hide, if a Shield
+    if pos('Leather', tier) > 0 then begin
+      if pos('Shield', armor_type) > 0 then
+        tier := 'Hide';
+    end;
+
     // Convert SteelPlate to Steel if a Shield
     if pos('Shield', armor_type) > 0 then begin
       if pos('SteelPlate', tier) > 0 then
