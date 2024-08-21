@@ -698,6 +698,12 @@ begin
         tier := 'Leather';
     end;
 
+    // Convert SteelPlate to Steel if a Shield
+    if pos('Shield', armor_type) > 0 then begin
+      if pos('SteelPlate', tier) > 0 then
+        tier := 'Steel';
+    end;
+
     // Convert ImperialHeavy to Steel
     if pos('ImperialHeavy', tier) > 0 then
       tier := 'Steel';
