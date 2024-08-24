@@ -348,6 +348,12 @@ begin
           end;
 
           // If the current LVLI is a "DwarvenCrossbow" list, and the current
+          // weapon type is a "Crossbow", go to the next list.
+          if SameText(weapon_type, 'Crossbow') then begin
+            if Pos('DwarvenCrossbow', iteratingLeveledListEI) > 0 then
+              Continue;
+          end;
+
           // Check that found LVLI EditorID contains the derived weapon type
           if Pos(UpperCase(weapon_type), UpperCase(iteratingLeveledListEI)) > 0 then begin
 
