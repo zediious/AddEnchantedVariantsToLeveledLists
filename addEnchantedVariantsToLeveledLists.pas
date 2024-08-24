@@ -347,6 +347,7 @@ begin
               Continue;
           end;
 
+          // If the current LVLI is a "DwarvenCrossbow" list, and the current
           // Check that found LVLI EditorID contains the derived weapon type
           if Pos(UpperCase(weapon_type), UpperCase(iteratingLeveledListEI)) > 0 then begin
 
