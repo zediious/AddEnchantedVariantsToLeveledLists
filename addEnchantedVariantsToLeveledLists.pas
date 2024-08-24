@@ -610,6 +610,11 @@ begin
             SetElementEditValues(entry, 'LVLO\Count', '1');
 
             AddMessage('Added weapon ' + EditorID(weaponRecord) + ' / ' + DisplayName(weaponRecord) + ' to leveled list ' + EditorID(newLeveledListRecord) + ' at level ' + IntToStr(level));
+
+            // We only want to add each weapon to one leveled list, and using
+            // mods such as Thaumaturgy can cause it's override to register as
+            // a separate list. This also increases script execution time.
+            Break;
           end;
         end;
       end;
@@ -827,7 +832,7 @@ begin
 
             // We only want to add each piece to one leveled list, and using
             // mods such as Thaumaturgy can cause it's override to register as
-            // a separate list.
+            // a separate list. This also increases script execution time.
             Break;
           end;
         end;
